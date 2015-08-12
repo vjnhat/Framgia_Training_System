@@ -50,7 +50,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'TrainingSystem.urls'
+ROOT_URLCONF = 'framgia-training-system.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'TrainingSystem.wsgi.application'
+WSGI_APPLICATION = 'framgia-training-system.wsgi.application'
 
 
 # Database
@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'TrainingSystem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'DemoDjango',
+        'NAME': 'TrainingSystem',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'AnhPhuc92A',
         'HOST': 'localhost',
         'PORT': '3306',
     }
