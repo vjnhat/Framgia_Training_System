@@ -56,7 +56,7 @@ ROOT_URLCONF = 'framgia.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR,'framgia/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'TrainingSystem',
         'USER': 'root',
-        'PASSWORD': 'AnhPhuc92A',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
     }
