@@ -8,7 +8,7 @@ class User(models.Model):
     email = models.CharField('Email', max_length=100)
     password = models.CharField('Password', max_length=100)
     remember = models.BooleanField('Remember')
-    supervision = models.BooleanField('Suppervision')
+    supervision = models.BooleanField('Supervision')
     study_status = models.BooleanField('Study Status')
     created_at = models.DateTimeField('Created at')
     updated_at = models.DateTimeField('Updated at')
