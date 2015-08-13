@@ -1,11 +1,79 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+{% load url from future %}
+{%block content %}
+<div class="ud-angular-loader">
+    <div class="channels skin6 channel-featured">
+        <div class="tab-content">
+            <div class="container">
 
-{% block content %}
-  <div class = "center jumbotron">
-    <h1>Training app</h1>
-    <h2>This is the home page for the <a href= "http://www.fragia.com/">Framgia</a>
-      Training app.
-    </h2>
-    <a href="{% url "login" %}">Login</a>
-  </div>
-{% endblock %}
+                <div class="fxw fxdc-md">
+                    <div class="lc dn-md">
+                        <div class="dn-md">
+                            <b class="mt10 fs12 db">
+                                Category course
+                            </b>
+                            <ul class="left-category mt10">
+                                <li>
+                                    <a href="" class="skin-color fxjc-md">
+                                        <span class="chan-title">Python</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="skin-color fxjc-md">
+                                        <span class="chan-title">Ruby</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="rc fx pt0-force-md">
+
+                            <div class="fxw fxdc-xs">
+                                <h2>Web Development</h2>
+                                <a href="" class="skin-color fxje fx link dn-lg">Browse all</a>
+                            </div>
+
+                            <ul class="discover-courses-list channel-courses-list">
+
+                                <li class="course-box small">
+
+                                    <a href="{% url 'course_index' %}" class="mask">
+                                    <span class="course-thumb pos-r dib">
+                                        <img alt="Beginner Photoshop to HTML5 and CSS3" src="https://dujk9xa5fr1wz.cloudfront.net/course/480x270/21386_e4cd_4.jpg">
+                                    </span>
+                                    <span class="box-second-row">
+                                        <span class="title ellipsis-2lines">
+                                                Beginner Photoshop to HTML5 and CSS3
+                                            </span>
+                                           <span class="dib title ins-title ellipsis-2lines">
+                                                  Mr Carl Heaton
+                                            </span>
+
+                                            <span class="reviews-row db p5-10 fxw">
+                                                <span class="s-rating smaller static maroon">
+                                                    <span style="width: 90.506%;"></span>
+                                                </span>
+                                                <span><span>(198)</span></span>
+                                            </span>
+
+                                            <span class="price-wrap fxac mh36">
+                                                <span class="price skin-color">
+                                                   <span><span>Free</span></span>
+                                                </span>
+
+                                            </span>
+                                    </span>
+
+                                 </a>
+                            </li>
+                        </ul>
+
+                        <a href="" class="skin-color link dn db-lg mt-10 mb20 bb1 pb5">Browse all</a>
+                    </div>
+                 </div>
+            </div>
+        </div>
+     </div>
+</div>
+{%endblock%}

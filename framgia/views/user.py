@@ -1,7 +1,13 @@
+__author__ = 'FRAMGIA\le.cong.phuc'
+from django.shortcuts import render
 from django.shortcuts import render_to_response, HttpResponseRedirect
 from django.contrib.auth import authenticate, login
 from django.template.context_processors import csrf
 from django.template import RequestContext
+
+
+def user_learning_course(request):
+    return render(request, 'user/user_learning_course.html', {})
 
 
 def login_user(request):
