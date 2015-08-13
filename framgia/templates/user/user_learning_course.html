@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<link rel="stylesheet" media="all" type="text/css" href="https://www.udemy.com/staticx/udemy/css/v5/udemy.css?v=a68753ebbe1bc832f5af41385f5aa9789ccc3091">
+<div class="ud-angular-loader">
+
+    <div class="my-courses-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 hidden-xs hidden-sm">
+                    <span class="a1 pos-r my-courses-heading">My Courses</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="card-wrapper">
+            <div class="card card--learning">
+                <div class="no-play-button">
+                    <a ng-href="/" href="/">
+                        <div class="card__image">
+                            <img src="https://dujk9xa5fr1wz.cloudfront.net/course/480x270/24823_963e_10.jpg">
+                        </div>
+                        <div class="card__details">
+                            <strong class="details__name">
+                                Java Tutorial for Complete Beginners
+                            </strong>
+
+                            <div class="details__instructor">
+                                John Purcell
+                            </div>
+                            <div class="details__bottom">
+                                <span class="details__bottom__progress">
+                                    <span class="progress__bar" style="width: 30%;"></span>
+                                </span>
+                                <span class="a11 text-medium-grey ng-hide"><span>30% Complete</span></span>
+
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row mt30">
+            <div class="col-xs-12 tar my-courses-nav ng-hide">
+                <div class="pager">
+                    <span class="pager-label"><span>1 - 2 of 2 COURSES</span></span>
+                    <button class="btn btn-default" disabled="disabled">
+                        <i class="fa fa-chevron-left"></i>
+                    </button>
+                    <button class="btn btn-default" disabled="disabled">
+                        <i class="fa fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
