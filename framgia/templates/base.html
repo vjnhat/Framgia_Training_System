@@ -2,9 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Home</title>
+    <link rel="stylesheet" media="all" type="text/css" href="https://www.udemy.com/staticx/udemy/css/discover.css?v=88ad5ace51c6ca21cc02e392f67934503739ff6a">
 </head>
 <body>
+    <div class="header-v4 js-hellobar white">
+        <div class="general-header-inner fxac">
+            <div class="general-header-left fxac fx">
+                <div class="search-v4-wrap ">
+                    <div class="ud-search search-v4">
+                        <form id="searchbox">
+                            <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                            <input type="text" placeholder="Search for Courses" class="search-input ui-autocomplete-input quick-search">
+                            <button type="submit" class="icon-search search-btn"></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <a href="">
+                <img class="udemy-logo" src="https://www.udemy.com/staticx/udemy/images/v4/logo-green.svg" alt="Udemy Logo" width="100">
+            </a>
+
+            <div class="general-header-right fx fxac fxje">
+                <a href="javascript:void(0)" class="ud-popup white-link sb login-link">
+                    Login
+                </a>
+
+                <span class="green-separator"></span>
+
+                <a href="javascript:void(0)" class="ud-popup white-link sb signup-link">
+                    Sign Up
+                </a>
+            </div>
+        </div>
+    </div>
+    {%block content %}{%endblock%}
 
 </body>
 </html>
