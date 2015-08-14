@@ -1,7 +1,7 @@
 from django.conf.urls import include, url
 from django.contrib import admin
-
 from . import views
+from framgia.views.admin.course  import CourseList, CourseDetail, CourseUpdate, CourseDelete, CourseCreate
 
 urlpatterns = [
     url(r"^$", views.base.index, name="base_index"),
@@ -16,4 +16,9 @@ urlpatterns = [
     url(r"^login/", views.user.login_user, name="login"),
     url(r'^logout/$', 'django.contrib.auth.views.logout',
                           {'next_page': '/'}, name="logout"),
+    url(r'^admin/courses/$',CourseList.as_view(), name = "course_index"),
+    url(r'^admin/course/(?P<pk>\d+)/$', CourseDetail.as_view(), name= "course_detail"),
+    url(r'^admin/course/(?P<pk>\d+)/edit/$', CourseUpdate.as_view(), name = "course_update"),
+    url(r'^admin/course/(?P<pk>\d+)/delete/$', CourseDelete.as_view(), name = "course_delete"),
+    url(r'^admin/course/new/$', CourseCreate.as_view(), name = "course_new" ),
 ]
