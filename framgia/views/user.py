@@ -22,7 +22,7 @@ def login_user(request):
             if user.is_active:
                 login(request, user)
                 state = "You're successfully logged in!"
-                HttpResponseRedirect("index.hml")
+                return  HttpResponseRedirect("/")
             else:
                 state = "Your account is not active, please contact the site admin."
         else:

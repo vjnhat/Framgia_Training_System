@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>{% block title%}{% endblock %}</title>
+    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" media="all" type="text/css" href="https://www.udemy.com/staticx/udemy/css/discover.css?v=88ad5ace51c6ca21cc02e392f67934503739ff6a">
 </head>
 <body class="my-courses  udemy  pageloaded">
@@ -20,25 +21,37 @@
                 </div>
             </div>
 
-           <a class="udemy-logo" href="/">
+            <a class="udemy-logo" href="/">
                 FRAMGIA TRAINING SYSTEM
                <!--  <img class="udemy-logo" src="https://www.udemy.com/staticx/udemy/images/v4/logo-green.svg" alt="Udemy Logo" width="100">-->
             </a>
+            {% if request.user.is_authenticated %}
+                <div class="general-header-right fx fxac fxje">
+                    <a href="javascript:void(0)" class="ud-popup white-link sb login-link">
+                        <a href="{% url "logout" %}">Logout</a>
+                    </a>
 
-           <div class="general-header-right fx fxac fxje">
-                <a href="javascript:void(0)" class="ud-popup white-link sb login-link">
-                    Login
-                </a>
+                    <span class="green-separator"></span>
 
-                <span class="green-separator"></span>
+                    <a href="javascript:void(0)" class="ud-popup white-link sb signup-link">
+                        {{ user.username }}
+                    </a>
+                </div>
+            {% else %}
+                <div class="general-header-right fx fxac fxje">
+                    <a href="javascript:void(0)" class="ud-popup white-link sb login-link">
+                        <a href="/login">Login</a>
+                    </a>
 
-                <a href="javascript:void(0)" class="ud-popup white-link sb signup-link">
-                    Sign Up
-                </a>
-           </div>
+                    <span class="green-separator"></span>
+
+                    <a href="javascript:void(0)" class="ud-popup white-link sb signup-link">
+                        Sign Up
+                    </a>
+                </div>
+            {% endif %}
         </div>
     </div>
     {%block content %}{%endblock%}
-
 </body>
 </html>
