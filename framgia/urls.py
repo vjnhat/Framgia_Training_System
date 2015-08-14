@@ -16,6 +16,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from framgia.view.course import CourseList, CourseDetail, CourseUpdate, CourseDelete, CourseCreate
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^courses/$',CourseList.as_view(), name = "course_index"),
+    url(r'^course/(?P<pk>\d+)/$', CourseDetail.as_view(), name= "course_detail"),
+    url(r'^course/(?P<pk>\d+)/edit/$', CourseUpdate.as_view(), name = "course_update"),
+    url(r'^course/(?P<pk>\d+)/delete$', CourseDelete.as_view(), name = "course_delete"),
+    url(r'^course/new/$', CourseCreate.as_view(), name = "course_new" ),
 ]
