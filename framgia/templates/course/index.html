@@ -1,0 +1,93 @@
+
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load url from future %}
+{% block content %}
+<div class="one-col-landing  ud-page">
+    <div class="main-top">
+        <div class="container">
+            <div class="row course-desc">
+                <div class="col-md-12">
+                    <h1 class="course-title">
+                        Beginner Photoshop to HTML5 and CSS3
+                    </h1>
+                    <div class="ci-d">
+                        Learn how to convert a Photoshop design into HTML5/CSS3 using Dreamweaver.
+                    </div>
+
+                    <div class="by mb10 flex-col-xs">
+                            <span class="mr30">Instructed by
+                                <a href="#" class="thb-n prox ud-popup">
+                                    Mr Carl Heaton
+                                </a>
+                            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    this is display course index
+    <h2> List Courses</h2>
+    {% for object in object_list %}
+        <ul> Course{{ object.id }}
+            <li>Name:<a href="{% url 'course_detail' object.id %}"> {{ object.name }}</a> |
+                <a href="{% url 'course_update' object.id %}"> <b>Edit</b></a>|
+                <a href="{%  url 'course_delete' object.id %}"><i>Delete</i></b></bi></a>
+            </li>
+
+            <li>Description:{{ object.description }}</li>
+        </ul>
+    {% endfor %}
+
+    <a href="{% url 'course_new' %}"> New Course </a>
+
+    <div class="main-middle fs12-xs show-nav-on-this">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 pb50">
+
+                    <div id="curriculum" class="top-space-for-scroll">
+                        <h3 class="tab-title">Curriculum</h3>
+
+                        <div class="table-responsive b0-xs">
+                            <table class="cur-list table table-hover ud-landingpage-curriculum">
+                                <tbody>
+                                    <tr class="cur-list-title">
+                                        <th colspan="4" class=" w30 tal hm">Subject 1:
+                                            Introduction
+                                        </th>
+                                    </tr>
+                                   <tr class="cur-list-row on">
+                                        <td class="lec-icon tac hm cur-icon wa-force-xs">
+                                            <i class="icon-play-sign"></i>
+                                        </td>
+                                        <td class="count wa-force-xs">Task 1</td>
+                                        <td class="lec-title-and-preview">
+                                            <div class="lec-title-and-preview-inner dif aic fxjsa-xs pr10-xs fxac-ie">
+                                                <div class="lec-title fx">
+                                                    <a href="#" class="lec-link">
+                                                        Starting HTML5 Programming
+                                                        <i class="ml5 icon-caret-down down-arrow"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="cur-list-row-detail">
+                                        <td class="hm"></td>
+                                        <td colspan="3">
+                                            In this lecture we go through the curriculum we will follow in the course along with a basic discussion on the course objectives.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
