@@ -16,6 +16,7 @@ urlpatterns = [
     url(r"^login/", views.user.login_user, name="login"),
     url(r'^logout/$', 'django.contrib.auth.views.logout',
                           {'next_page': '/'}, name="logout"),
+    url(r'^register/$', views.user.register, name="register"),
     url(r'^admin/courses/$',CourseList.as_view(), name = "course_index"),
     url(r'^admin/course/(?P<pk>\d+)/$', CourseDetail.as_view(), name= "course_detail"),
     url(r'^admin/course/(?P<pk>\d+)/edit/$', CourseUpdate.as_view(), name = "course_update"),
