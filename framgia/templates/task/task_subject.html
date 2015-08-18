@@ -1,0 +1,33 @@
+{% for task in task_list %}
+<tr class="cur-list-row on">
+    <td class="lec-icon tac hm cur-icon wa-force-xs">
+        <i class="icon-play-sign"></i>
+    </td>
+    <td colspan="3" class="count wa-force-xs">{{ task.name }}</td>
+
+</tr>
+<tr class="cur-list-row-detail">
+    <td class="hm"></td>
+    <td colspan="3">
+        <form>
+            {% if task.answer_a == task.answer_true and task.status == True  %}
+                <input type="radio" name="answer" value="a"> <span class="answer" style="color:red;">{{ task.answer_a }}</span>
+            {% else %}
+                <input type="radio" name="answer" value="a"> <span class="answer">{{ task.answer_a }}</span>
+            {% endif %}
+            <br>
+            {% if task.answer_b == task.answer_true and task.status == True  %}
+                <input type="radio" name="answer" value="b">  <span class="answer" style="color:red;">{{ task.answer_b }}</span>
+            {% else %}
+                <input type="radio" name="answer" value="b">  <span class="answer">{{ task.answer_b }}</span>
+            {% endif %}
+            <br>
+            {% if task.answer_c == task.answer_true and task.status == True  %}
+                <input type="radio" name="answer" value="c">  <span class="answer" style="color:red;">{{ task.answer_c }}</span>
+            {% else %}
+                <input type="radio" name="answer" value="c">  <span class="answer">{{ task.answer_c }}</span>
+            {% endif %}
+        </form>
+    </td>
+</tr>
+{% endfor %}

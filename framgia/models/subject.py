@@ -11,7 +11,6 @@ class Subject(models.Model):
     end_at = models.DateTimeField('End at', default= timezone.now()+ datetime.timedelta(days = 90))
     status = models.BooleanField('Status', default= True)
 
-
     def __str__(self):
         return self.name
 
@@ -31,3 +30,4 @@ class Subject(models.Model):
     class Meta:
         app_label = 'framgia'
         
+

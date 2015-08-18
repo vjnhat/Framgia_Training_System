@@ -38,6 +38,7 @@ class UserSubjects(models.Model):
 class UserTask(models.Model):
     user_id = models.ForeignKey(User)
     task_id = models.ForeignKey(task.Task)
+    answer_choice = models.CharField('Answer choice', max_length=1)
     status = models.BooleanField('Status')
 
     class Meta:

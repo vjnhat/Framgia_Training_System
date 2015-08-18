@@ -17,11 +17,9 @@ class Course(models.Model):
     def __str__(self):
         return  self.name
 
-
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse
         return reverse('CourseDetail.as_view()' , args=[str(self.id)])
-
 
     class Meta:
         app_label = 'framgia'
@@ -38,7 +36,7 @@ class CourseSubject(models.Model):
         :return: create a new record in coursesubject table
         it mean create a relationship between a course and a subject
         """
-      pass
+        pass
 
     def delete(self, course, subject):
         """

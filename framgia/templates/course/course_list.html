@@ -1,0 +1,45 @@
+<div class="rc fx pt0-force-md">
+
+    <div class="fxw fxdc-xs">
+        <h2>Web Development</h2>
+        <a href="" class="skin-color fxje fx link dn-lg">Browse all</a>
+    </div>
+
+    <ul class="discover-courses-list channel-courses-list">
+
+        {% for course in course_list %}
+        <li class="course-box small">
+            <a href="{% url 'course_index' course.id %}" class="mask">
+                <span class="course-thumb pos-r dib">
+                    <img alt="Beginner Python"
+                         src="https://dujk9xa5fr1wz.cloudfront.net/course/240x135/16646_dfea_8.jpg">
+                </span>
+                <span class="box-second-row">
+                    <span class="title ellipsis-2lines">
+                        {{ course.name }}
+                    </span>
+                    <span class="dib title ins-title ellipsis-2lines">
+                        Mr Carl Heaton
+                    </span>
+
+                    <span class="reviews-row db p5-10 fxw">
+                        <span class="s-rating smaller static maroon">
+                            <span style="width: 90.506%;"></span>
+                        </span>
+                        <span><span>(198)</span></span>
+                    </span>
+
+                    <span class="price-wrap fxac mh36">
+                        <span class="price skin-color">
+                           <span><span>Free</span></span>
+                        </span>
+
+                    </span>
+                </span>
+
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>
