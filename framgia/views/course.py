@@ -1,9 +1,8 @@
 __author__ = 'FRAMGIA\le.cong.phuc'
-from django.shortcuts import render
+from framgia.models.course import Course
+from django.views.generic import DetailView
 
 
-def index(request):
-    return render(request, 'course/index.html', {})
-
-
-
+class CourseDetailView(DetailView):
+    queryset = Course.objects.all()
+    template_name = 'course/course_detail.html'

@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load url from future %}
+{% load framgia_tags %}
+{% block content %}
+
+<div class="one-col-landing  ud-page">
+    <div class="main-top">
+        <div class="container">
+            <div class="row course-desc">
+                <div class="col-md-12">
+                    <h1 class="course-title">
+                       {{ object.name }}
+                    </h1>
+                    <div class="ci-d">
+                        {{ object.description }}
+                    </div>
+
+                    <div class="by mb10 flex-col-xs">
+                            <span class="mr30">Created by
+                                <a href="#" class="thb-n prox ud-popup">
+                                    Phuc Le Cong
+                                </a>
+                            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-middle fs12-xs show-nav-on-this">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 pb50">
+
+                    <div id="curriculum" class="top-space-for-scroll">
+                        <script>
+                            function startTimer(duration, display) {
+                                var timer = duration, minutes, seconds;
+                                setInterval(function () {
+                                    minutes = parseInt(timer / 60, 10);
+                                    seconds = parseInt(timer % 60, 10);
+
+                                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                                    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                                    display.textContent = minutes + ":" + seconds;
+
+                                    if (--timer < 0) {
+                                        timer = duration;
+                                    }
+                                }, 1000);
+                            }
+                            window.onload = function () {
+                                var minutes = 60 * 20,
+                                    display = document.querySelector('#countdown');
+                                startTimer(minutes, display);
+                            };
+                        </script>
+                        <h3 class="tab-title">Curriculum <span style="float:right;"> Time left: <span id="countdown"></span></span></h3>
+                        <div class="table-responsive b0-xs">
+                            <table class="cur-list table table-hover ud-landingpage-curriculum">
+                                <tbody>
+                                    {% for subject in object.subjects.all %}
+                                    <tr class="cur-list-title">
+
+                                        <th colspan="4" class=" w30 tal hm">Subject {{ forloop.counter }}:
+                                            <a href="#" class="lec-link">
+                                                {{ subject.name }}
+                                                <i class="ml5 icon-caret-down down-arrow"></i>
+                                            </a>
+                                        </th>
+                                    </tr>
+
+                                    {% get_task_list subject.id %}
+
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <button type="button">Summit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
