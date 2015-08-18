@@ -10,7 +10,7 @@
         <ul> Course{{ object.id }}
             <li>Name:<a href="{% url 'course_detail' object.id %}"> {{ object.name }}</a> |
                 <a href= "{% url 'course_update' object.id %}"> <b> Edit </b></a>|
-                <a href= "{%  url 'course_delete' object.id %}"><i> Delete </i></b></bi></a>
+                <a href= "{%  url 'course_delete' object.id %}"><i> Delete </i></a>
             </li>
 
             <li>Description:{{ object.description }}</li>

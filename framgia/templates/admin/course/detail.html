@@ -4,4 +4,11 @@
         <li>Name: {{ course.name }}</li>
         <li>Description: {{ course.description }}</li>
     </ul>
+    <ul>Subjects in {{ course.name }}
+        {% for subject in course.subjects.all %}
+            <a href="{% url 'subject_detail' subject.id %}">
+                <li> {{ subject.name }}</li>
+            </a>
+        {% endfor %}
+    </ul>
 {% endblock %}
