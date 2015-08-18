@@ -35,7 +35,7 @@
                     <span class="green-separator"></span>
 
                     <a href="javascript:void(0)" class="ud-popup white-link sb signup-link">
-                        {{ user.username }}
+                        <a href="{% url "profile" user.id %}">{{ user.username }}</a>
                     </a>
                 </div>
             {% else %}
