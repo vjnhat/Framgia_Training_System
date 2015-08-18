@@ -1,4 +1,3 @@
-__author__ = 'nhat'
 from django.views.generic import ListView, DeleteView, DetailView, UpdateView, CreateView
 from framgia.models.course import Course, CourseSubject
 from framgia.models.subject import Subject
@@ -35,9 +34,9 @@ class CourseDelete(DeleteView):
 
 
 class CourseCreate(CreateView):
-    """ Create a new course
-    """
+    """ Create a new course """
     model = Course
+    lst_subjects = Subject.objects.all()
     fields = ["name", "description"]
     success_url = reverse_lazy("course_index")
     template_name = "admin/course/form/course_form.html"

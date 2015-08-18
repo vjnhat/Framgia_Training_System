@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <ul> Subject {{ subject.id }}
+        <li>Name: {{ subject.name }}</li>
+        <li>Description: {{ subject.description }}</li>
+    </ul>
+    <ul>{{ subject.name }} belongs to courses:
+        {% for course in subject.get_course %}
+            <li>
+                <a href="{% url 'course_detail' course.id %}"> {{ course.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    
+{% endblock %}

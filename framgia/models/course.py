@@ -2,7 +2,7 @@ __author__ = 'FRAMGIA\le.cong.phuc'
 from django.db import models
 from . import subject
 from django.utils import timezone
-import  datetime
+import datetime
 
 
 class Course(models.Model):
@@ -17,12 +17,11 @@ class Course(models.Model):
     def __str__(self):
         return  self.name
 
-    def get_subjects_list(self):
-        return self.subjects.all()
 
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse
         return reverse('CourseDetail.as_view()' , args=[str(self.id)])
+
 
     class Meta:
         app_label = 'framgia'
@@ -31,5 +30,23 @@ class Course(models.Model):
 class CourseSubject(models.Model):
     course = models.ForeignKey(Course)
     subject = models.ForeignKey(subject.Subject)
+
+    def create(self, course, subject):
+        """
+        :param course: class: Course, var:course
+        :param subject: type: Subject, subject
+        :return: create a new record in coursesubject table
+        it mean create a relationship between a course and a subject
+        """
+      pass
+
+    def delete(self, course, subject):
+        """
+
+        :param course: class: Course, var: course
+        :param subject: class : Subject, var: subject
+        :return: delete record has subject = subject, course = course
+        it mean delete relationship between a course and a  subject
+        """
     class Meta:
         app_label = 'framgia'

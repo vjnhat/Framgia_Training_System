@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+    Subject Index
+{% endblock %}
+ {% block content %}
+     <center>
+    <h2> List Subjects</h2>
+    {% for object in object_list %}
+        <ul> Subject{{ object.id }}
+            <li>Name:<a href="{% url 'subject_detail' object.id %}"> {{ object.name }}</a> |
+                <a href= "{% url 'subject_update' object.id %}"> <b> Edit </b></a>|
+                <a href= "{%  url 'subject_delete' object.id %}"><i> Delete </i></a>
+            </li>
+
+            <li>Description:{{ object.description }}</li>
+        </ul>
+    {% endfor %}
+     </center>
+    <a href="{% url 'subject_new' %}"> <b> New Subject</b> </a>
+
+ {% endblock %}
