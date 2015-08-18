@@ -20,15 +20,6 @@ urlpatterns = [
     url(r'^register/$', views.user.register, name="register"),
     url(r'^users/(?P<pk>\d+)/profile/$', views.user.ProfileDetail.as_view(), name="profile"),
     url(r'^users/(?P<pk>\d+)/edit/$', views.user.EditProfile.as_view(), name="editprofile"),
+    url(r'^admin/', include('framgia.views.admin.urls')),
 
-    url(r'^admin/courses/$',CourseList.as_view(), name = "course_index"),
-    url(r'^admin/course/(?P<pk>\d+)/$', CourseDetail.as_view(), name= "course_detail"),
-    url(r'^admin/course/(?P<pk>\d+)/edit/$', CourseUpdate.as_view(), name = "course_update"),
-    url(r'^admin/course/(?P<pk>\d+)/delete/$', CourseDelete.as_view(), name = "course_delete"),
-    url(r'^admin/course/new/$', CourseCreate.as_view(), name = "course_new" ),
-    url(r'^admin/subjects/$', SubjectList.as_view(), name = "subject_index"),
-    url(r'^admin/subject/(?P<pk>\d+)', SubjectDetail.as_view(),name = "subject_detail"),
-    url(r'admin/subject/(?P<pk>\d+)/edit/$', SubjectUpdate.as_view(), name="subject_update"),
-    url(r'admin/subject/(?P<pk>\d+)/delete/$', SubjectDelete.as_view(), name="subject_delete"),
-    url(r'admin/subject/new/$', SubjectCreate.as_view(), name="subject_new"),
 ]
