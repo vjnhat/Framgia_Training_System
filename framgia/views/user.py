@@ -4,6 +4,10 @@ from django.contrib.auth import authenticate, login
 from django.template.context_processors import csrf
 from django.template import RequestContext
 from django.contrib.auth.forms import UserCreationForm
+from django.views.generic import DetailView, UpdateView
+from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse_lazy
+from django.shortcuts import get_object_or_404
 
 
 def user_learning_course(request):
@@ -49,3 +53,15 @@ def register(request):
     return render(request, "user/register.html", {
         "form": form,
     })
+
+
+class ProfileDetail(DetailView):
+    model = User
+    template_name = "user/profile.html"
+
+
+class EditProfile(UpdateView):
+    model = User
+    template_name = "user/editprofile.html"
+    fields = ["first_name", "last_name", "email"]
+    success_url = reverse_lazy("base_index")
